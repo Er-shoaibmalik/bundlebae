@@ -53,13 +53,13 @@ $('.responsive').on('click', function (e) {
 	})
 
 // offcanvas menu
-$(".menu-tigger").on("click", function () {
-	$(".offcanvas-menu,.offcanvas-overly").addClass("active");
-	return false;
-});
-$(".menu-close,.offcanvas-overly").on("click", function () {
-	$(".offcanvas-menu,.offcanvas-overly").removeClass("active");
-});
+// $(".menu-tigger").on("click", function () {
+// 	$(".offcanvas-menu,.offcanvas-overly").addClass("active");
+// 	return false;
+// });
+// $(".menu-close,.offcanvas-overly").on("click", function () {
+// 	$(".offcanvas-menu,.offcanvas-overly").removeClass("active");
+// });
     
 
 
