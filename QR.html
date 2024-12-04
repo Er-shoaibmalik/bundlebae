@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo/logo.png" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+            position: relative;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #b71c1c; /* Deep red */
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background-color: #d32f2f;
+        }
+
+        .container {
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            color: #333333;
+            text-align: center;
+        }
+
+        h1 {
+            color: #b71c1c; /* Deep red */
+        }
+
+        .qr-code img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border: 4px solid #000000;
+            border-radius: 10px;
+        }
+
+        .instruction {
+            font-size: 16px;
+            color: #000000;
+            margin-top: 20px;
+        }
+
+        footer {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            background-color: #b71c1c;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            .instruction {
+                font-size: 14px;
+            }
+
+            .back-button {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-button">Back</a>
+    <div class="container">
+        <img src="/img/bg/sub-text-logo1.png" alt="" style="width: 300px; height: auto;">
+        <h1>Make a Payment</h1>
+        <div class="qr-code">
+            <img src="/img/QR/QR.jpg" alt="QR Code for Payment">
+        </div>
+        <p class="instruction">Scan the QR code above to make the payment. After completing the payment, please send a message with your payment confirmation and specify the course you wish to enroll in.</p>
+    </div>
+    <footer>
+        &copy; 2021 BUNDLE BAE - All Rights Reserved
+    </footer>
+</body>
+</html>
