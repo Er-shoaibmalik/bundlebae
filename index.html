@@ -20,6 +20,58 @@
     <link rel="stylesheet" href="css/default.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+
+    <style>
+      .slider {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 18px;
+}
+
+button.prev {
+  left: 10px;
+}
+
+button.next {
+  right: 10px;
+}
+
+button:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+    </style>
+
   </head>
   <body class="dark">
     <!-- header -->
@@ -75,6 +127,7 @@
                         </li>
 
                         <li><a href="#contact">Contact</a></li>
+                        <li><a href="#faq">Faq</a></li>
                       </ul>
                     </nav>
                   </div>
@@ -189,8 +242,8 @@
     <!-- main-area -->
     <main>
       <!-- slider-area -->
-      <!-- <section id="parallax" class="slider-area fix p-relative">
-        <!-- <div class="slider-shape ss-one layer" data-depth="0.10">
+      <section id="parallax" class="slider-area fix p-relative">
+         <div class="slider-shape ss-one layer" data-depth="0.10">
           <img src="img/shape/slider_shape01.png" alt="shape" />
         </div>
         <div class="slider-shape ss-two layer" data-depth="0.30">
@@ -207,7 +260,7 @@
         </div>
         <div class="slider-shape ss-six layer" data-depth="0.30">
           <img src="img/shape/slider_shape05.png" alt="shape" />
-        </div> -->
+        </div>
       <!-- <div
           class="slider-active-two"
           style="
@@ -251,11 +304,24 @@
         </div>
       </section> -->
 
-      <section style="margin-top: 6.5rem">
-        <div>
-          <img src="/img/banner_page-0001.jpg" alt="" />
+      <section style="margin-top: 6.5rem; width: 100%; overflow: hidden;">
+        <div class="slider">
+          <div class="slides">
+            <div class="slide"><img src="/img/banner_page-0001.png" alt="Slide 1"></div>
+            <div class="slide"><img src="/img/banner_page-0002.png" alt="Slide 2"></div>
+            <div class="slide"><img src="/img/banner_page-0003.png" alt="Slide 3"></div>
+            <div class="slide"><img src="/img/banner_page-0004.png" alt="Slide 4"></div>
+          </div>
+          <button class="prev" onclick="moveSlide(-1)">❮</button>
+          <button class="next" onclick="moveSlide(1)">❯</button>
         </div>
       </section>
+      
+      
+
+
+
+      
 
       <!-- slider-area-end -->
       <!-- brand-area -->
@@ -307,158 +373,196 @@
       <!-- brand-area-end -->
       <!-- services-three-area -->
       <section
-  id="services"
-  class="services-area services-bg p-relative fix pt-120 pb-90"
->
-  <div class="container">
-    <div class="row justify-content-center align-items-center">
-      <div class="col-lg-8 col-md-9">
-        <div
-          class="section-title p-relative text-center mb-50 wow fadeInLeft animated"
-          data-animation="fadeInLeft"
-          data-delay=".4s"
-        >
-          <h5>
-            <span class="line">
-              <img src="img/bg/sub-text-logo1.png" alt="circle_right"
-              style="height: auto; width: 250px; margin-top: -70px;" />
-            </span>
-          </h5>
-          <h2>Our Best Services</h2>
-          <p>
-            Our services focus on delivering expert-led courses in key
-            digital domains like Facebook advertising, influencer
-            marketing, and AI technologies. With flexible learning options
-            and practical insights, we help you master the skills needed
-            to succeed in today’s fast-paced digital landscape. Gain
-            valuable knowledge and stand out in your field!
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="row services-active">
-      <!-- First Content -->
-      <div class="col-lg-4 col-md-6">
-        <div
-          class="s-single-services mb-30 wow fadeInUp animated"
-          data-animation="fadeInDown animated"
-          data-delay=".2s"
-        >
-          <div class="services-icon">
-            <img src="img/icon/sr-icon1.png" alt="icon" />
-            <img
-              src="img/icon/sr-icon1-hover.png"
-              alt="img"
-              class="hover"
-            />
+        id="services"
+        class="services-area services-bg p-relative fix pt-120 pb-90"
+      >
+        <div class="container">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-lg-8 col-md-9">
+              <div
+                class="section-title p-relative text-center mb-50 wow fadeInLeft animated"
+                data-animation="fadeInLeft"
+                data-delay=".4s"
+              >
+                <h5>
+                  <span class="line">
+                    <img
+                      src="img/bg/sub-text-logo1.png"
+                      alt="circle_right"
+                      style="height: auto; width: 250px; margin-top: -70px"
+                    />
+                  </span>
+                </h5>
+                <h2>Our Best Services</h2>
+                <p>
+                  Our services focus on delivering expert-led courses in key
+                  digital domains like Facebook advertising, influencer
+                  marketing, and AI technologies. With flexible learning options
+                  and practical insights, we help you master the skills needed
+                  to succeed in today’s fast-paced digital landscape. Gain
+                  valuable knowledge and stand out in your field!
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="second-services-content">
-            <h5>E-BOOKS</h5>
-            <p class="short-text">
-              An eBook (electronic book) is a digital version of a printed book that can be read on devices like smartphones, tablets, computers, or
-            </p>
-            <p class="full-text" style="display: none;">
-              e-readers. Typically in formats like PDF, EPUB, or MOBI, eBooks are portable and may include interactive elements such as links or videos. They offer customizable reading options, allowing users to adjust text size, fonts, and background colors. Instantly accessible after purchase, eBooks are widely used for education, entertainment, and skill development in areas like business, self-improvement, and creativity.
-            </p>
-            <button class="btn read-more" onclick="toggleContent(this)">
-              Read More <i class="fa-sharp fa-light fa-arrow-up"></i>
-            </button>
-          </div>
-        </div>
-      </div>
+          <div class="row services-active">
+            <!-- First Content -->
+            <div class="col-lg-4 col-md-6">
+              <div
+                class="s-single-services mb-30 wow fadeInUp animated"
+                data-animation="fadeInDown animated"
+                data-delay=".2s"
+              >
+                <div class="services-icon">
+                  <img src="img/icon/sr-icon1.png" alt="icon" />
+                  <img
+                    src="img/icon/sr-icon1-hover.png"
+                    alt="img"
+                    class="hover"
+                  />
+                </div>
+                <div class="second-services-content">
+                  <h5>E-BOOKS</h5>
+                  <p class="short-text">
+                    An eBook (electronic book) is a digital version of a printed
+                    book that can be read on devices like smartphones, tablets,
+                    computers, or
+                  </p>
+                  <p class="full-text" style="display: none">
+                    e-readers. Typically in formats like PDF, EPUB, or MOBI,
+                    eBooks are portable and may include interactive elements
+                    such as links or videos. They offer customizable reading
+                    options, allowing users to adjust text size, fonts, and
+                    background colors. Instantly accessible after purchase,
+                    eBooks are widely used for education, entertainment, and
+                    skill development in areas like business, self-improvement,
+                    and creativity.
+                  </p>
+                  <button class="btn read-more" onclick="toggleContent(this)">
+                    Read More <i class="fa-sharp fa-light fa-arrow-up"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
 
-      <!-- Second Content -->
-      <div class="col-lg-4 col-md-6">
-        <div
-          class="s-single-services mb-30 wow fadeInUp animated"
-          data-animation="fadeInDown animated"
-          data-delay=".2s"
-        >
-          <div class="services-icon">
-            <img src="img/icon/sr-icon2.png" alt="icon" />
-            <img
-              src="img/icon/sr-icon2-hover.png"
-              alt="img"
-              class="hover"
-            />
-          </div>
-          <div class="second-services-content">
-            <h5>PDF'S</h5>
-            <p class="short-text">
-              A PDF (Portable Document Format), developed by Adobe Systems, is a universal file format ensuring documents appear the same across devices 
-            </p>
-            <p class="full-text" style="display: none;">
-              and platforms, from PCs to smartphones. Known for its fixed layout, it maintains consistent formatting regardless of screen size. PDFs support multimedia elements like text, images, hyperlinks, videos, and interactive forms. They offer robust security features, including encryption, password protection, and digital signatures, and can be compressed to reduce file size without quality loss. PDFs are widely used for manuals, eBooks, forms, and contracts.
-            </p>
-            <button class="btn read-more" onclick="toggleContent(this)">
-              Read More <i class="fa-sharp fa-light fa-arrow-up"></i>
-            </button>
-          </div>
-        </div>
-      </div>
+            <!-- Second Content -->
+            <div class="col-lg-4 col-md-6">
+              <div
+                class="s-single-services mb-30 wow fadeInUp animated"
+                data-animation="fadeInDown animated"
+                data-delay=".2s"
+              >
+                <div class="services-icon">
+                  <img src="img/icon/sr-icon2.png" alt="icon" />
+                  <img
+                    src="img/icon/sr-icon2-hover.png"
+                    alt="img"
+                    class="hover"
+                  />
+                </div>
+                <div class="second-services-content">
+                  <h5>PDF'S</h5>
+                  <p class="short-text">
+                    A PDF (Portable Document Format), developed by Adobe
+                    Systems, is a universal file format ensuring documents
+                    appear the same across devices
+                  </p>
+                  <p class="full-text" style="display: none">
+                    and platforms, from PCs to smartphones. Known for its fixed
+                    layout, it maintains consistent formatting regardless of
+                    screen size. PDFs support multimedia elements like text,
+                    images, hyperlinks, videos, and interactive forms. They
+                    offer robust security features, including encryption,
+                    password protection, and digital signatures, and can be
+                    compressed to reduce file size without quality loss. PDFs
+                    are widely used for manuals, eBooks, forms, and contracts.
+                  </p>
+                  <button class="btn read-more" onclick="toggleContent(this)">
+                    Read More <i class="fa-sharp fa-light fa-arrow-up"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
 
-      <!-- Third Content -->
-      <div class="col-lg-4 col-md-6">
-        <div
-          class="s-single-services mb-30 wow fadeInUp animated"
-          data-animation="fadeInDown animated"
-          data-delay=".2s"
-        >
-          <div class="services-icon">
-            <img src="img/icon/sr-icon3.png" alt="icon" />
-            <img
-              src="img/icon/sr-icon3-hover.png"
-              alt="img"
-              class="hover"
-            />
-          </div>
-          <div class="second-services-content">
-            <h5>BUNDLES</h5>
-            <p class="short-text">
-              A bundle from BUNDLE BAE is a collection of digital products, such as e-books, PDFs, guides, and templates, grouped together and sold at a discounted price.
-            </p>
-            <p class="full-text" style="display: none;">
-              Bundles offer cost savings compared to individual purchases, provide convenience by consolidating resources, and deliver comprehensive tools to achieve specific goals, such as a "Business Starter Bundle" with an entrepreneurship e-book, budgeting worksheet, and marketing plan. They enhance value by offering more for less and may include exclusive or limited-time content, making them highly appealing.
-            </p>
-            <button class="btn read-more" onclick="toggleContent(this)">
-              Read More <i class="fa-sharp fa-light fa-arrow-up"></i>
-            </button>
-          </div>
-        </div>
-      </div>
+            <!-- Third Content -->
+            <div class="col-lg-4 col-md-6">
+              <div
+                class="s-single-services mb-30 wow fadeInUp animated"
+                data-animation="fadeInDown animated"
+                data-delay=".2s"
+              >
+                <div class="services-icon">
+                  <img src="img/icon/sr-icon3.png" alt="icon" />
+                  <img
+                    src="img/icon/sr-icon3-hover.png"
+                    alt="img"
+                    class="hover"
+                  />
+                </div>
+                <div class="second-services-content">
+                  <h5>BUNDLES</h5>
+                  <p class="short-text">
+                    A bundle from BUNDLE BAE is a collection of digital
+                    products, such as e-books, PDFs, guides, and templates,
+                    grouped together and sold at a discounted price.
+                  </p>
+                  <p class="full-text" style="display: none">
+                    Bundles offer cost savings compared to individual purchases,
+                    provide convenience by consolidating resources, and deliver
+                    comprehensive tools to achieve specific goals, such as a
+                    "Business Starter Bundle" with an entrepreneurship e-book,
+                    budgeting worksheet, and marketing plan. They enhance value
+                    by offering more for less and may include exclusive or
+                    limited-time content, making them highly appealing.
+                  </p>
+                  <button class="btn read-more" onclick="toggleContent(this)">
+                    Read More <i class="fa-sharp fa-light fa-arrow-up"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
 
-      <!-- Fourth Content -->
-      <div class="col-lg-4 col-md-6">
-        <div
-          class="s-single-services mb-30 wow fadeInUp animated"
-          data-animation="fadeInDown animated"
-          data-delay=".2s"
-        >
-          <div class="services-icon">
-            <img src="img/icon/sr-icon4.png" alt="icon" />
-            <img
-              src="img/icon/sr-icon4-hover.png"
-              alt="img"
-              class="hover"
-            />
-          </div>
-          <div class="second-services-content">
-            <h5>VIDEO</h5>
-            <p class="short-text">
-              Video courses are instructional materials delivered via video, designed to teach skills or subjects flexibly and engagingly. They feature
-            </p>
-            <p class="full-text" style="display: none;">
-              organized video lessons with visual and audio content, including demonstrations and animations, often complemented by interactive elements like quizzes or live sessions. With on-demand access, users can learn at their own pace, supported by supplementary materials like PDFs or worksheets. Benefits include engaging, easy-to-follow formats, efficiency through revisiting or skipping sections, and expert insights catering to diverse learning styles.
-            </p>
-            <button class="btn read-more" onclick="toggleContent(this)">
-              Read More <i class="fa-sharp fa-light fa-arrow-up"></i>
-            </button>
+            <!-- Fourth Content -->
+            <div class="col-lg-4 col-md-6">
+              <div
+                class="s-single-services mb-30 wow fadeInUp animated"
+                data-animation="fadeInDown animated"
+                data-delay=".2s"
+              >
+                <div class="services-icon">
+                  <img src="img/icon/sr-icon4.png" alt="icon" />
+                  <img
+                    src="img/icon/sr-icon4-hover.png"
+                    alt="img"
+                    class="hover"
+                  />
+                </div>
+                <div class="second-services-content">
+                  <h5>VIDEO</h5>
+                  <p class="short-text">
+                    Video courses are instructional materials delivered via
+                    video, designed to teach skills or subjects flexibly and
+                    engagingly. They feature
+                  </p>
+                  <p class="full-text" style="display: none">
+                    organized video lessons with visual and audio content,
+                    including demonstrations and animations, often complemented
+                    by interactive elements like quizzes or live sessions. With
+                    on-demand access, users can learn at their own pace,
+                    supported by supplementary materials like PDFs or
+                    worksheets. Benefits include engaging, easy-to-follow
+                    formats, efficiency through revisiting or skipping sections,
+                    and expert insights catering to diverse learning styles.
+                  </p>
+                  <button class="btn read-more" onclick="toggleContent(this)">
+                    Read More <i class="fa-sharp fa-light fa-arrow-up"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       <!-- services-three-area -->
       <!-- about-area -->
@@ -490,7 +594,10 @@
                 <div class="about-title second-title pb-25">
                   <h5>
                     <span class="line">
-                      <img src="img/logo/logo.png" alt="circle_right" style="height: 60px; width: 60px;"
+                      <img
+                        src="img/logo/logo.png"
+                        alt="circle_right"
+                        style="height: 60px; width: 60px"
                     /></span>
                     About Us
                   </h5>
@@ -578,7 +685,10 @@
               >
                 <h5>
                   <span class="line">
-                    <img src="img/bg/sub-text-logo1.png" alt="circle_right" style="height: auto; width: 250px; margin-top: -70px;"
+                    <img
+                      src="img/bg/sub-text-logo1.png"
+                      alt="circle_right"
+                      style="height: auto; width: 250px; margin-top: -70px"
                   /></span>
                 </h5>
                 <h2>Newest Courses</h2>
@@ -731,6 +841,177 @@
           </div>
         </div>
       </section>
+
+      <main id="faq">
+        <!-- faq-area -->
+        <section
+          class="event event03 pt-120 pb-120 p-relative fix"
+          style="
+            background-image: url(img/bg/faq-bg.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+          "
+        >
+          <div class="container">
+            <div class="row">
+              <div
+                class="col-lg-6 col-md-6 wow fadeInUp animated"
+                data-animation="fadeInUp"
+                data-delay=".4s"
+              >
+                <div class="about-title second-title pb-25">
+                  <!-- <h5>
+                    <span class="line">
+                      <img src="img/features/sublogo.png" alt="circle_right"
+                    /></span>
+                    Frequency & questions
+                  </h5> -->
+                  <h2>Frequency & questions Our creative agency.</h2>
+                </div>
+                <div
+                  class="faq-wrap pr-30 wow fadeInUp animated"
+                  data-animation="fadeInUp"
+                  data-delay=".4s"
+                >
+                  <div class="accordion" id="accordionExample">
+                    <div class="card">
+                      <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                          <button
+                            class="faq-btn"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree"
+                          >
+                            Who can use Bundle Bae?
+                          </button>
+                        </h2>
+                      </div>
+                      <div
+                        id="collapseThree"
+                        class="collapse show"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="card-body">
+                          Our platform is available to anyone aged 14 or older
+                          who agrees to our terms of service.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                          <button
+                            class="faq-btn collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne"
+                          >
+                            What types of digital products do you offer?
+                          </button>
+                        </h2>
+                      </div>
+                      <div
+                        id="collapseOne"
+                        class="collapse"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="card-body">
+                          We offer a variety of digital products, including: -
+                          E-books - Workbooks - Marketing templates -
+                          Educational guides - Business resources , Etc.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                          <button
+                            class="faq-btn collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo"
+                          >
+                            What payment methods do you accept?
+                          </button>
+                        </h2>
+                      </div>
+                      <div
+                        id="collapseTwo"
+                        class="collapse"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="card-body">
+                          For now we only accept payments through UPI apps.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header" id="headingFour">
+                        <h2 class="mb-0">
+                          <button
+                            class="faq-btn collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour"
+                          >
+                            Can I return or get a refund for a purchased
+                            product?
+                          </button>
+                        </h2>
+                      </div>
+                      <div
+                        id="collapseFour"
+                        class="collapse"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="card-body">
+                          No, we have a strict *no-return policy* on all digital
+                          products. Once purchased, the product is
+                          non-refundable.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header" id="headingFive">
+                        <h2 class="mb-0">
+                          <button
+                            class="faq-btn collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive"
+                          >
+                            Can I access my products on multiple devices?
+                          </button>
+                        </h2>
+                      </div>
+                      <div
+                        id="collapseFive"
+                        class="collapse"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="card-body">
+                          Yes! You can download and access your digital products
+                          on any device compatible with the file format.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-lg-6 col-md-6 wow fadeInUp animated"
+                data-animation="fadeInUp"
+                data-delay=".4s"
+              >
+                <img src="img/bg/faq-img2.png" alt="circle_right" />
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- faq-area -->
+      </main>
+
       <!-- gallery-area-end -->
       <!-- scrollbox-area -->
       <div class="scrollbox2 mb-80 fix">
@@ -858,7 +1139,10 @@
               >
                 <h5>
                   <span class="line">
-                    <img src="img/bg/sub-text-logo1.png" alt="circle_right" style="height: auto; width: 250px;"
+                    <img
+                      src="img/bg/sub-text-logo1.png"
+                      alt="circle_right"
+                      style="height: auto; width: 250px"
                   /></span>
                 </h5>
                 <h2>What client Says?</h2>
@@ -882,7 +1166,11 @@
                   "
                 >
                   <div class="testi-author">
-                    <img src="img/testimonial/testi_avatar.jpg" alt="img" style="width: 100px; height: 100px; border-radius: 50%;"/>
+                    <img
+                      src="img/testimonial/testi_avatar.jpg"
+                      alt="img"
+                      style="width: 100px; height: 100px; border-radius: 50%"
+                    />
                     <div class="ta-info">
                       <h6>Biki Jena</h6>
                       <div class="review-icon">
@@ -917,7 +1205,11 @@
                   "
                 >
                   <div class="testi-author">
-                    <img src="img/testimonial/testi_avatar_02.jpg" alt="img" style="width: 100px; height: 100px; border-radius: 50%;" />
+                    <img
+                      src="img/testimonial/testi_avatar_02.jpg"
+                      alt="img"
+                      style="width: 100px; height: 100px; border-radius: 50%"
+                    />
                     <div class="ta-info">
                       <h6>Ankit Jena</h6>
                       <div class="review-icon">
@@ -953,7 +1245,11 @@
                   "
                 >
                   <div class="testi-author">
-                    <img src="img/testimonial/testi_avatar_03.jpg" alt="img" style="width: 100px; height: 100px; border-radius: 50%;"/>
+                    <img
+                      src="img/testimonial/testi_avatar_03.jpg"
+                      alt="img"
+                      style="width: 100px; height: 100px; border-radius: 50%"
+                    />
                     <div class="ta-info">
                       <h6>Vivek Saah</h6>
                       <div class="review-icon">
@@ -962,7 +1258,12 @@
                     </div>
                   </div>
                   <p>
-                    A game changer for my business! This course was exactly what I needed to take my social media marketing to the next level. The strategies for Facebook and Instagram ads were super clear, and I could implement them right away. My engagement has increased, and I've seen more sales in just a few weeks. Highly recommend!
+                    A game changer for my business! This course was exactly what
+                    I needed to take my social media marketing to the next
+                    level. The strategies for Facebook and Instagram ads were
+                    super clear, and I could implement them right away. My
+                    engagement has increased, and I've seen more sales in just a
+                    few weeks. Highly recommend!
                   </p>
                   <div class="row">
                     <div class="col-lg-3">
@@ -986,7 +1287,11 @@
                   "
                 >
                   <div class="testi-author">
-                    <img src="img/testimonial/testi_avatar_04.jpg" alt="img"  style="width: 100px; height: 100px; border-radius: 50%;" />
+                    <img
+                      src="img/testimonial/testi_avatar_04.jpg"
+                      alt="img"
+                      style="width: 100px; height: 100px; border-radius: 50%"
+                    />
                     <div class="ta-info">
                       <h6>Amit Kumar Panda</h6>
                       <div class="review-icon">
@@ -995,7 +1300,12 @@
                     </div>
                   </div>
                   <p>
-                    Amazing content and great instructor! The instructor was very knowledgeable and explained complex concepts in a simple way. The lessons were organized and easy to follow. The practical tips on Instagram stories, ads, and Facebook analytics were incredibly useful. I feel much more confident using these platforms for my business now!
+                    Amazing content and great instructor! The instructor was
+                    very knowledgeable and explained complex concepts in a
+                    simple way. The lessons were organized and easy to follow.
+                    The practical tips on Instagram stories, ads, and Facebook
+                    analytics were incredibly useful. I feel much more confident
+                    using these platforms for my business now!
                   </p>
                   <div class="row">
                     <div class="col-lg-3">
@@ -1811,7 +2121,11 @@
             <div class="col-xl-5 col-lg-5 col-sm-6">
               <div class="footer-widget mb-30">
                 <div class="f-widget-title mb-100">
-                  <img src="img/logo/logo_page.png" alt="img"  style="width: 12vw; height: auto;"/>
+                  <img
+                    src="img/logo/logo_page.png"
+                    alt="img"
+                    style="width: 12vw; height: auto"
+                  />
                 </div>
                 <div
                   class="footer-subricbe p-relative"
@@ -1857,19 +2171,23 @@
                 <div class="footer-link">
                   <ul>
                     <li>
-                      <a href="https://www.facebook.com/share/19X9x1iJbW/" target="_blank"
+                      <a
+                        href="https://www.facebook.com/share/19X9x1iJbW/"
+                        target="_blank"
                         >Facebook</a
                       >
                     </li>
                     <li>
                       <a
-                        href="https://x.com/bundle__bae?t=2aZlLLHIivxXTg21HG1tuA&s=0" target="_blank"
+                        href="https://x.com/bundle__bae?t=2aZlLLHIivxXTg21HG1tuA&s=0"
+                        target="_blank"
                         >Twitter</a
                       >
                     </li>
                     <li>
                       <a
-                        href="https://www.instagram.com/bundle__bae?igsh=MXBybmc2OTZjNWY2Zg==" target="_blank"
+                        href="https://www.instagram.com/bundle__bae?igsh=MXBybmc2OTZjNWY2Zg=="
+                        target="_blank"
                         >Instagram</a
                       >
                     </li>
@@ -1931,6 +2249,37 @@
 
     <!-- footer-end -->
     <!-- JS here -->
+    <script>
+      let currentIndex = 0; // Start with the first slide
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+
+function updateSlide() {
+  const sliderWidth = document.querySelector('.slider').offsetWidth;
+  const slidesContainer = document.querySelector('.slides');
+  slidesContainer.style.transform = `translateX(-${currentIndex * sliderWidth}px)`;
+}
+
+function moveSlide(direction) {
+  currentIndex += direction;
+  if (currentIndex < 0) {
+    currentIndex = totalSlides - 1; // Loop back to the last slide
+  } else if (currentIndex >= totalSlides) {
+    currentIndex = 0; // Loop back to the first slide
+  }
+  updateSlide();
+}
+
+// Auto-slide every 5 seconds
+setInterval(() => {
+  moveSlide(1);
+}, 5000);
+
+// Ensure the slider resizes correctly
+window.addEventListener('resize', updateSlide);
+
+    </script>
+
     <script>
       function toggleContent(button) {
         const shortText = button.previousElementSibling.previousElementSibling;
