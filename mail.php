@@ -1,11 +1,11 @@
 <?php
- require './PHPMailer/Exception.php';
- require './PHPMailer/PHPMailer.php';
- require './PHPMailer/SMTP.php';
+ require '../PHPMailer/Exception.php';
+ require '../PHPMailer/PHPMailer.php';
+ require '../PHPMailer/SMTP.php';
  use PHPMailer\PHPMailer\PHPMailer;
  use PHPMailer\PHPMailer\Exception;
-$firstn = $_POST['firstn'];
-$lastn = $_POST['lastn'];
+$firstn = $_POST['fname'];
+$lastn = $_POST['lname'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
 $subject = $_POST['subject'];

@@ -1640,7 +1640,7 @@
                         <input
                           type="text"
                           id="fname"
-                          name="firstn"
+                          name="fname"
                           placeholder="First Name"
                           required
                         />
@@ -1651,7 +1651,7 @@
                         <input
                           type="text"
                           id="lname"
-                          name="lastn"
+                          name="lname"
                           placeholder="Last Name"
                           required
                         />
