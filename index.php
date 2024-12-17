@@ -1628,7 +1628,7 @@
                       <h2>Get in touch with Us</h2>
                     </div>
 
-                    <form id="contactForm" method="POST" action="mail.php" class="contact-form mt-30">
+                    <form id="contactForm" method="POST" action="./mail.php" class="contact-form mt-30">
                   
      
 
