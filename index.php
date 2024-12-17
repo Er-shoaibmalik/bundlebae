@@ -1628,99 +1628,109 @@
                       <h2>Get in touch with Us</h2>
                     </div>
 
-                    <form
-                      action="mail.php"
-                      method="post"
-                      class="contact-form mt-30"
-                    >
-                      <div class="row">
-                        <div class="col-lg-6">
-                          <div class="contact-field p-relative c-name mb-30">
-                            <input
-                              type="text"
-                              id="firstn"
-                              name="firstn"
-                              placeholder="First Name"
-                              required
-                            />
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="contact-field p-relative c-email mb-20">
-                            <input
-                              type="text"
-                              id="lastn"
-                              name="lastn"
-                              placeholder="Last Name"
-                              required
-                            />
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="contact-field p-relative c-subject mb-30">
-                            <input
-                              type="text"
-                              id="email"
-                              name="email"
-                              placeholder="Eamil"
-                              required
-                            />
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="contact-field p-relative c-subject mb-30">
-                            <input
-                              type="text"
-                              id="phone"
-                              name="phone"
-                              placeholder="Phone No."
-                              required
-                            />
-                          </div>
-                        </div>
-                        <div class="col-lg-12">
-                          <div class="contact-field p-relative c-subject mb-30">
-                            <input
-                              type="text"
-                              id="subject"
-                              name="subject"
-                              placeholder="Subject"
-                              required
-                            />
-                          </div>
-                        </div>
+                    <form id="contactForm" method="POST" action="mail.php" class="contact-form mt-30">
+                  
+     
 
-                        <div class="col-lg-12">
-                          <div class="contact-field p-relative c-message mb-30">
-                            <textarea
-                              name="message"
-                              id="message"
-                              cols="30"
-                              rows="10"
-                              placeholder="Write comments"
-                            ></textarea>
-                          </div>
-                        </div>
-                        <div class="col-lg-12">
-                          <p>
-                            * Call us 24/7 or fill out the form below to receive
-                              a free.
-                          </p>
-                        </div>
-                        <div class="col-lg-12">
-                          <div class="slider-btn text-center">
-                            <button
-                              class="btn ss-btn active"
-                              data-animation="fadeInRight"
-                              data-delay=".8s"
-                            >
-                              Send Message
-                              <i class="fa-sharp fa-light fa-arrow-up"></i>
-                            </button>
-                          </div>
-                        </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      
+                      <div class="contact-field p-relative c-name mb-30">
+
+                        <input
+                          type="text"
+                          id="fname"
+                          name="firstn"
+                          placeholder="First Name"
+                          required
+                        />
                       </div>
-                    </form>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="contact-field p-relative c-email mb-20">
+                        <input
+                          type="text"
+                          id="lname"
+                          name="lastn"
+                          placeholder="Last Name"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="contact-field p-relative c-subject mb-30">
+                        <input
+                          type="text"
+                          id="email"
+                          name="email"
+                          placeholder="Email"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="contact-field p-relative c-subject mb-30">
+                        <input
+                          type="text"
+                          id="phone"
+                          name="phone"
+                          placeholder="Phone No."
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="contact-field p-relative c-subject mb-30">
+                        <input
+                          type="text"
+                          id="subject"
+                          name="subject"
+                          placeholder="Subject"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                      <div class="contact-field p-relative c-message mb-30">
+                        <textarea
+                          name="message"
+                          id="message"
+                          cols="30"
+                          rows="10"
+                          placeholder="Write comments"
+                        ></textarea>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <p>
+                        * Call us 24/7 or fill out the form below to receive
+                        a free.
+                      </p>
+                    </div>
+                    
+                    <div class="col-lg-12">
+                      <div class="slider-btn text-center">
+                        <input type="submit"
+                          class="btn ss-btn active"
+                          data-animation="fadeInRight"
+                          data-delay=".8s"
+                          value="Send Mail"
+                          id="submit"
+                          class="submit"
+                         
+                        >
+                        <div class="alert alert-success col-lg-12" style="display:none; margin-top:13px" id="msg" role="alert">
+Thankyou For connecting Us!
+</div>
+                          <!-- <i class="fa-sharp fa-light fa-arrow-up"></i>
+                        /> -->
+                        
+                      </div>
+
+                    </div>
+                  </div>
+                </form>
                   </div>
                 </div>
                 <div class="col-lg-4">
@@ -2155,6 +2165,82 @@
         </div>
       </div>
     </footer>
+     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+          $('#contactForm').on('submit', function(e) {
+              e.preventDefault(); 
+              $("#submit").val("Submitting.......");
+
+              var formData = {
+                  fname: $('#fname').val(),
+                  lname: $('#lname').val(),
+                  email:$('#email').val(),
+                  phone: $('#phone').val(),
+                  subject:$('#subject').val(),
+                  message: $('#message').val()
+              };
+
+        
+              $.ajax({
+                  url: 'mail.php', 
+                  type: 'POST',
+                  data: formData,
+                  success: function(response) {
+                    $("#msg").css("display", "block");
+                        $("#submit").val("Send Mail");
+
+
+                         $('#fname').val(),
+                         $('#lname').val(),
+                         $('#email').val(),
+                         $('#phone').val(),
+                         $('#subject').val(),
+                         $('#message').val()
+                         
+                       
+                      setTimeout(() => {
+                          $("#msg").css("display", "none");
+                      }, 5000);
+                  },
+                  error: function(jqXHR, textStatus, errorThrown) {
+                      // Handle error
+                      alert('Error sending mail: ' + textStatus);
+                      
+                     
+                  }
+              });
+          });
+
+          // Add smooth scrolling to all links
+          $("a").on('click', function(event) {
+              if (this.hash !== "") {
+                  event.preventDefault();
+
+                  var hash = this.hash;
+                  $('html, body').animate({
+                      scrollTop: $(hash).offset().top
+                  }, 800, function() {
+                      window.location.hash = hash;
+                  });
+              }
+          });
+       });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- footer-end -->
     <!-- JS here -->
