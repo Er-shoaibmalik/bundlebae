@@ -10,6 +10,7 @@
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
+
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/animate.min.css" />
     <link rel="stylesheet" href="css/magnific-popup.css" />
@@ -20,58 +21,6 @@
     <link rel="stylesheet" href="css/default.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
-
-    <style>
-      .slider {
-  position: relative;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-}
-
-.slides {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-  width: 100%;
-  flex-shrink: 0;
-}
-
-.slide img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  z-index: 10;
-  font-size: 18px;
-}
-
-button.prev {
-  left: 10px;
-}
-
-button.next {
-  right: 10px;
-}
-
-button:hover {
-  background: rgba(0, 0, 0, 0.7);
-}
-
-    </style>
-
   </head>
   <body class="dark">
     <!-- header -->
@@ -186,63 +135,12 @@ button:hover {
     </div>
     <!-- header-end -->
     <!-- offcanvas-area -->
-    <div class="offcanvas-menu">
-      <span class="menu-close"><i class="fas fa-times"></i></span>
-      <form
-        role="search"
-        method="get"
-        id="searchform"
-        class="searchform"
-        action="http://wordpress.zcube.in/xconsulta/"
-      >
-        <input type="text" name="s" id="search" placeholder="Search" />
-        <button><i class="fa fa-search"></i></button>
-      </form>
-      <div id="cssmenu3" class="menu-one-page-menu-container">
-        <ul class="menu">
-          <li class="menu-item menu-item-type-custom menu-item-object-custom">
-            <a href="index.html">Home</a>
-          </li>
-          <li class="menu-item menu-item-type-custom menu-item-object-custom">
-            <a href="about.html">About Us</a>
-          </li>
-          <li class="menu-item menu-item-type-custom menu-item-object-custom">
-            <a href="courses.html">Courses</a>
-          </li>
-          <li class="menu-item menu-item-type-custom menu-item-object-custom">
-            <a href="pricing.html">Pricing</a>
-          </li>
-          <li class="menu-item menu-item-type-custom menu-item-object-custom">
-            <a href="team.html">Teacher</a>
-          </li>
-          <li class="menu-item menu-item-type-custom menu-item-object-custom">
-            <a href="projects.html">Gallery</a>
-          </li>
-          <li class="menu-item menu-item-type-custom menu-item-object-custom">
-            <a href="blog.html">Blog</a>
-          </li>
-          <li class="menu-item menu-item-type-custom menu-item-object-custom">
-            <a href="contact.html">Contact</a>
-          </li>
-        </ul>
-      </div>
-      <div id="cssmenu2" class="menu-one-page-menu-container">
-        <ul id="menu-one-page-menu-12" class="menu">
-          <li class="menu-item menu-item-type-custom menu-item-object-custom">
-            <a href="#home"><span>+8 12 3456897</span></a>
-          </li>
-          <li class="menu-item menu-item-type-custom menu-item-object-custom">
-            <a href="#howitwork"><span>info@example.com</span></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="offcanvas-overly"></div>
+
     <!-- offcanvas-end -->
     <!-- main-area -->
     <main>
       <!-- slider-area -->
-      <section id="parallax" class="slider-area fix p-relative">
+      <!-- <section id="parallax" class="slider-area fix p-relative">
          <div class="slider-shape ss-one layer" data-depth="0.10">
           <img src="img/shape/slider_shape01.png" alt="shape" />
         </div>
@@ -260,7 +158,7 @@ button:hover {
         </div>
         <div class="slider-shape ss-six layer" data-depth="0.30">
           <img src="img/shape/slider_shape05.png" alt="shape" />
-        </div>
+        </div> -->
       <!-- <div
           class="slider-active-two"
           style="
@@ -305,22 +203,33 @@ button:hover {
       </section> -->
 
       <section style="margin-top: 6.5rem; width: 100%; overflow: hidden;">
-        <div class="slider">
-          <div class="slides">
-            <div class="slide"><img src="/img/banner_page-0001.png" alt="Slide 1"></div>
-            <div class="slide"><img src="/img/banner_page-0002.png" alt="Slide 2"></div>
-            <div class="slide"><img src="/img/banner_page-0003.png" alt="Slide 3"></div>
-            <div class="slide"><img src="/img/banner_page-0004.png" alt="Slide 4"></div>
+        <div style="position: relative; width: 100%; height: auto; overflow: hidden;">
+          <div style="display: flex; transition: transform 0.5s ease-in-out;">
+            <div style="width: 100%; flex-shrink: 0;">
+              <img src="/img/banner_page-0001.png" alt="Slide 1" style="width: 100%; height: auto; display: block;">
+            </div>
+            <div style="width: 100%; flex-shrink: 0;">
+              <img src="/img/banner_page-0002.png" alt="Slide 2" style="width: 100%; height: auto; display: block;">
+            </div>
+            <div style="width: 100%; flex-shrink: 0;">
+              <img src="/img/banner_page-0003.png" alt="Slide 3" style="width: 100%; height: auto; display: block;">
+            </div>
+            <div style="width: 100%; flex-shrink: 0;">
+              <img src="/img/banner_page-0004.png" alt="Slide 4" style="width: 100%; height: auto; display: block;">
+            </div>
           </div>
-          <button class="prev" onclick="moveSlide(-1)">❮</button>
-          <button class="next" onclick="moveSlide(1)">❯</button>
+          <button 
+            style="position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px 20px; cursor: pointer; z-index: 10; font-size: 18px; left: 10px;" 
+            onclick="moveSlide(-1)">
+            ❮
+          </button>
+          <button 
+            style="position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px 20px; cursor: pointer; z-index: 10; font-size: 18px; right: 10px;" 
+            onclick="moveSlide(1)">
+            ❯
+          </button>
         </div>
       </section>
-      
-      
-
-
-
       
 
       <!-- slider-area-end -->
@@ -1795,7 +1704,7 @@ button:hover {
                         <div class="col-lg-12">
                           <p>
                             * Call us 24/7 or fill out the form below to receive
-                            a free.
+                              a free.
                           </p>
                         </div>
                         <div class="col-lg-12">
@@ -2251,34 +2160,37 @@ button:hover {
     <!-- JS here -->
     <script>
       let currentIndex = 0; // Start with the first slide
-const slides = document.querySelectorAll('.slide');
-const totalSlides = slides.length;
-
-function updateSlide() {
-  const sliderWidth = document.querySelector('.slider').offsetWidth;
-  const slidesContainer = document.querySelector('.slides');
-  slidesContainer.style.transform = `translateX(-${currentIndex * sliderWidth}px)`;
-}
-
-function moveSlide(direction) {
-  currentIndex += direction;
-  if (currentIndex < 0) {
-    currentIndex = totalSlides - 1; // Loop back to the last slide
-  } else if (currentIndex >= totalSlides) {
-    currentIndex = 0; // Loop back to the first slide
-  }
-  updateSlide();
-}
-
-// Auto-slide every 5 seconds
-setInterval(() => {
-  moveSlide(1);
-}, 5000);
-
-// Ensure the slider resizes correctly
-window.addEventListener('resize', updateSlide);
-
+      const slides = document.querySelectorAll("section > div > div > div");
+      const totalSlides = slides.length;
+    
+      function updateSlide() {
+        const sliderWidth = document.querySelector("section > div").offsetWidth;
+        const slidesContainer = document.querySelector("section > div > div");
+        slidesContainer.style.transform = `translateX(-${currentIndex * sliderWidth}px)`;
+      }
+    
+      function moveSlide(direction) {
+        currentIndex += direction;
+        if (currentIndex < 0) {
+          currentIndex = totalSlides - 1; // Loop back to the last slide
+        } else if (currentIndex >= totalSlides) {
+          currentIndex = 0; // Loop back to the first slide
+        }
+        updateSlide();
+      }
+    
+      // Auto-slide every 5 seconds
+      setInterval(() => {
+        moveSlide(1);
+      }, 5000);
+    
+      // Ensure the slider resizes correctly
+      window.addEventListener("resize", updateSlide);
+    
+      // Initial setup
+      updateSlide();
     </script>
+    
 
     <script>
       function toggleContent(button) {
