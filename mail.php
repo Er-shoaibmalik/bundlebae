@@ -1,7 +1,7 @@
 <?php
- require '../PHPMailer/Exception.php';
- require '../PHPMailer/PHPMailer.php';
- require '../PHPMailer/SMTP.php';
+ require './PHPMailer/Exception.php';
+ require './PHPMailer/PHPMailer.php';
+ require './PHPMailer/SMTP.php';
  use PHPMailer\PHPMailer\PHPMailer;
  use PHPMailer\PHPMailer\Exception;
 $firstn = $_POST['fname'];
@@ -67,7 +67,6 @@ try {
 
     } else {
         echo json_encode(['status' => 'Error']);
-       
         exit;
     }
 } catch (Exception $e) {
